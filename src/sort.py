@@ -54,14 +54,19 @@ def insertsort(relist):
 def binary_search(relist,item):
     low = 0
     high = len(relist)-1
+    #第一个元素就满足的情况
+    if relist[low] == item:
+        return low
     while low<=high:
+        #mid = (low+high)>>1
         mid = (low+high)//2 #python3 向下取整
         guess = relist[mid]
         if guess<item:
             low = mid+1
         elif guess>item:
             high = mid-1
-        else: return mid
+        else: 
+            return mid
     return None
 
 
